@@ -10,7 +10,7 @@ source:
   sha256: 3ff70cecdb98cb851dc8b04709c616cdd6b3b681dee83c0c8b022a6422718189
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script: 
     - cd src
