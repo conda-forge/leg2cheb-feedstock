@@ -1,5 +1,5 @@
 {% set name = "leg2cheb" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/spectralDNS/Legendre-to-Chebyshev/archive/{{ version }}.tar.gz
-  sha256: 3ff70cecdb98cb851dc8b04709c616cdd6b3b681dee83c0c8b022a6422718189
+  sha256: d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   script: 
     - cd src
