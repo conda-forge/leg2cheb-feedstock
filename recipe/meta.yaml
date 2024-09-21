@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/spectralDNS/Legendre-to-Chebyshev/archive/{{ version }}.tar.gz
-  sha256: d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed
+  sha256: ccec28b94a8559db5bafcf0fb58e2095a7ab8c6b58f88be2d6a74eda60f73851
 
 build:
   number: 0
