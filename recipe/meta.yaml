@@ -10,7 +10,7 @@ source:
   sha256: 3ff70cecdb98cb851dc8b04709c616cdd6b3b681dee83c0c8b022a6422718189
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   script: 
     - cd src
@@ -20,10 +20,18 @@ build:
 
 requirements:
   build:
-    - ninja                               
+    - numpy >=2.0                        # [build_platform != target_platform] 
+    - meson                              # [build_platform != target_platform]
+    - python                             # [build_platform != target_platform]
+    - cython                             # [build_platform != target_platform]
+    - fftw                               # [build_platform != target_platform]
+    - openblas                           # [build_platform != target_platform]
+    - libopenblas =*=*openmp*            # [build_platform != target_platform]
+    - ninja 
     - pkg-config
     - llvm-openmp  # [osx]
     - libgomp      # [linux]            
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }} 
     - {{ stdlib('c') }}
@@ -36,6 +44,7 @@ requirements:
     - fftw
     - openblas
     - libopenblas =*=*openmp*
+
   run:
     - python
     - fftw
